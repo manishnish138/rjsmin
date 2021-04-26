@@ -1,0 +1,6 @@
+language: python
+
+services: docker
+
+script:
+  - ./wheel/install.sh
