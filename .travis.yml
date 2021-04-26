@@ -3,4 +3,5 @@ language: python
 services: docker
 
 script:
+  - chmod 777 ./wheel/install.sh
   - ./wheel/install.sh
