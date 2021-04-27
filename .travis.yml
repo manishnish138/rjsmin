@@ -2,8 +2,11 @@ language: python
 
 services: docker
 
+python: "2.7"
+
 script:
   - chmod +x ./wheel/install.sh
   - ./wheel/install.sh rjsmin 1.1.2
   - cd dist
-  - ls -l 
+  - ls -l
+  - ls
