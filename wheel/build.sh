@@ -34,7 +34,7 @@ for dir in /opt/python/*; do
     py=${pyv}
     check=${versions/${pyv}}
     hh=/${pyv}
-    if [ "${versions/${pyv}}" = "${versions}" ]; then
+    if [ ${versions/${pyv}} = "${versions}" ]; then
         f=${versions/${pyv}}
         v=/${pyv}
         continue
