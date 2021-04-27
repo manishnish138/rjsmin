@@ -31,12 +31,7 @@ for dir in /opt/python/*; do
     pyv="$(
         "${dir}/bin/python" -c 'import sys; sys.stdout.write("".join(map(str, sys.version_info[:2])))'
     )"
-    py=${pyv}
-    check=${versions/${pyv}}
-    hh=/${pyv}
     if [ ${versions/${pyv}} = "${versions}" ]; then
-        f=${versions/${pyv}}
-        v=/${pyv}
         continue
     fi
 
