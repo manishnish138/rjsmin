@@ -33,12 +33,12 @@ for dir in /opt/python/*; do
     )"
     py="${pyv} "
     check="${versions/${pyv}}"
-    th=${/${pyv}}
-    hh=/${pyv}
+    th="${/${pyv}}"
+    hh="/${pyv}"
     if [ "${versions/${pyv}}" = "${versions}" ]; then
         f=${versions/${pyv}}"
-        b=${/${pyv}}
-        v=/${pyv}
+        b="${/${pyv}}"
+        v="/${pyv}"
         continue
     fi
 
