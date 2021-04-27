@@ -4,4 +4,4 @@ services: docker
 
 script:
   - chmod 777 ./wheel/install.sh
-  - ./wheel/install.sh
+  - ./wheel/install.sh rjsmin 1.1.2
