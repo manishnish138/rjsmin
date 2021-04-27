@@ -3,5 +3,7 @@ language: python
 services: docker
 
 script:
-  - chmod 777 ./wheel/install.sh
+  - chmod +x ./wheel/install.sh
   - ./wheel/install.sh rjsmin 1.1.2
+  - cd dist
+  - ls -l 
