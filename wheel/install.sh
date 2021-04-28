@@ -6,7 +6,7 @@ shift
 
 versions="${@}"
 hh=${version}
-for version in {versions};do
+for version in ${versions};do
     docker run --rm -v "$(pwd)":/io quay.io/pypa/manylinux2014_x86_64 /io/wheel/build.sh ${pkg} ${versions}
     docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 
