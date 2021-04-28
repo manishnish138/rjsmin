@@ -6,7 +6,7 @@ python: "2.7"
 
 script:
   - chmod +x ./wheel/install.sh
-  - ./wheel/install.sh rjsmin 35 36 37 38 39
+  - ./wheel/install.sh rjsmin 27 35 36 37 38 39
   - cd dist
   - ls -l
   - ls
