@@ -5,11 +5,16 @@ pkg="${1}"
 shift
 
 versions="${@}"
-hh=${version}
-for version in ${versions};do
-    docker run --rm -v "$(pwd)":/io quay.io/pypa/manylinux2010_x86_64 /io/wheel/build.sh ${pkg} ${version}
-    docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 
-    docker run --rm -v "$(pwd)":/io quay.io/pypa/manylinux1_i686 /io/wheel/build.sh ${pkg} ${version}
-    docker run --rm -v "$(pwd)":/io quay.io/pypa/manylinux2014_aarch64 /io/wheel/build.sh ${pkg} ${version}
+images="manylinux2010_x86_64 manylinux1_i686 manylinux2014_aarch64"
+
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+
+for image in ${images};do
+    for version in ${versions};do
+        if [ "${version}" == "27" && "${images}" == "manylinux2014_aarch64" ]; then
+           continue
+        else
+           docker run --rm -v "$(pwd)":/io $quay.io/pypa/${images} /io/wheel/build.sh ${pkg} ${versions}
+    done
 done
